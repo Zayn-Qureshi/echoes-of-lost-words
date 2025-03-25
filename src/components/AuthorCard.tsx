@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { User } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export interface AuthorType {
   id: number;
@@ -26,19 +27,15 @@ const AuthorCard: React.FC<AuthorCardProps> = ({ author, index }) => {
     >
       {/* Author image or placeholder */}
       <div className="flex-shrink-0">
-        <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden bg-paper-dark">
+        <Avatar className="w-28 h-28 md:w-32 md:h-32 border border-border">
           {author.image ? (
-            <img 
-              src={author.image} 
-              alt={author.name} 
-              className="w-full h-full object-cover"
-            />
+            <AvatarImage src={author.image} alt={author.name} />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-paper to-paper-dark">
+            <AvatarFallback className="bg-gradient-to-br from-paper to-paper-dark">
               <User className="w-12 h-12 text-ink-lightest" />
-            </div>
+            </AvatarFallback>
           )}
-        </div>
+        </Avatar>
       </div>
       
       {/* Author info */}
