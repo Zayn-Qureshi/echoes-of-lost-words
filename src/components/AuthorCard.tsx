@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { User } from 'lucide-react';
 
 export interface AuthorType {
@@ -17,6 +17,8 @@ interface AuthorCardProps {
 }
 
 const AuthorCard: React.FC<AuthorCardProps> = ({ author, index }) => {
+  const [expanded, setExpanded] = useState(false);
+  
   return (
     <div 
       className="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-lg border border-border shadow-sm animate-fade-in-left"
@@ -46,11 +48,25 @@ const AuthorCard: React.FC<AuthorCardProps> = ({ author, index }) => {
           <p className="text-ink-light text-sm">{author.lifespan}</p>
         </div>
         
-        <p className="text-ink text-sm mb-4 line-clamp-3">{author.biography}</p>
+        <div className="relative">
+          <p className={`text-ink text-sm mb-4 ${expanded ? '' : 'line-clamp-3'}`}>
+            {author.biography}
+          </p>
+          {author.biography.length > 150 && (
+            <button 
+              className="text-xs text-navy hover:text-navy-dark focus:outline-none"
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? 'Read less' : 'Read more'}
+            </button>
+          )}
+        </div>
         
         <div className="pt-3 border-t border-border">
           <h4 className="text-xs uppercase tracking-wider text-ink-lightest mb-1">Literary Contribution</h4>
-          <p className="text-sm text-ink-light line-clamp-2">{author.contribution}</p>
+          <p className={`text-sm text-ink-light ${expanded ? '' : 'line-clamp-2'}`}>
+            {author.contribution}
+          </p>
         </div>
       </div>
     </div>

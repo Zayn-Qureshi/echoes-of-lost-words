@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -57,6 +56,38 @@ const books: BookType[] = [
     description: "Lord Byron's personal memoirs, containing candid accounts of his scandalous life, literary reflections, and political opinions. These were expected to be one of the most revealing literary autobiographies in English history.",
     reason: "Burned by Byron's publisher and friends after his death to protect his reputation and the privacy of those mentioned.",
   },
+  {
+    id: 7,
+    title: "Sappho's Poetry Collection",
+    author: "Sappho",
+    year: "c. 600 BCE",
+    description: "The complete works of the ancient Greek lyric poet Sappho of Lesbos, who was highly regarded in antiquity. Of her nine volumes of poetry, only fragments remain today, with most of her work lost to time.",
+    reason: "Lost through a combination of the passage of time, deliberate destruction due to controversial content, and the fall of the Library of Alexandria.",
+  },
+  {
+    id: 8,
+    title: "Homer's Lost Epics (Margites & Others)",
+    author: "Homer",
+    year: "c. 750 BCE",
+    description: "Beyond the Iliad and Odyssey, Homer is believed to have composed several other epics, including the Margites, a comic epic about a foolish man. These works were well-known in ancient Greece but disappeared over time.",
+    reason: "Lost during the Medieval period when many classical texts vanished due to lack of copying and preservation.",
+  },
+  {
+    id: 9,
+    title: "Aristotle's Second Book of Poetics",
+    author: "Aristotle",
+    year: "c. 335 BCE",
+    description: "The rumored second volume of Aristotle's Poetics focused on comedy, which would have been a companion to his famous treatise on tragedy. This text would have provided invaluable insights into ancient Greek comedic theory.",
+    reason: "Possibly destroyed during the sack of Athens or lost when the Library of Alexandria burned; famously featured in Umberto Eco's novel 'The Name of the Rose'.",
+  },
+  {
+    id: 10,
+    title: "The Epic of Gilgamesh (Complete Version)",
+    author: "Unknown",
+    year: "c. 2100 BCE",
+    description: "While fragments of this ancient Mesopotamian epic poem survive, scholars believe the complete version was much more extensive. The epic follows King Gilgamesh's quest for immortality and contains one of the earliest flood narratives.",
+    reason: "Clay tablets containing the full text were likely destroyed during invasions of Mesopotamia, with only partial fragments recovered from archaeological sites.",
+  },
 ];
 
 // Mock data for authors
@@ -81,6 +112,27 @@ const authors: AuthorType[] = [
     lifespan: "1509–1546",
     biography: "A French scholar, translator, and printer. Known for his anticlerical views and promotion of Classical literature, Dolet became a symbol of Renaissance free thought.",
     contribution: "Published controversial religious and humanist texts, including his own writings on linguistics and translations of Plato and Erasmus, most of which were banned and destroyed.",
+  },
+  {
+    id: 4,
+    name: "Fyodor Dostoevsky",
+    lifespan: "1821–1881",
+    biography: "A Russian novelist, philosopher, and journalist who explored human psychology in the troubled political, social, and spiritual contexts of 19th-century Russia. Dostoevsky was arrested and sentenced to death for participating in revolutionary activities, but his sentence was commuted at the last minute. He spent four years in a Siberian labor camp, an experience that deeply influenced his worldview and writings.",
+    contribution: "Through works like 'Crime and Punishment,' 'The Idiot,' and 'The Brothers Karamazov,' Dostoevsky explored themes of faith, suffering, free will, and redemption. His penetrating psychological insights and philosophical depth revolutionized the novel as an art form. Though his major works survived, some of his early manuscripts and prison writings were lost or destroyed.",
+  },
+  {
+    id: 5,
+    name: "Franz Kafka",
+    lifespan: "1883–1924",
+    biography: "A German-speaking Bohemian novelist and short-story writer, widely regarded as one of the major figures of 20th-century literature. Kafka worked as an insurance officer while writing in his spare time. He suffered from depression, anxiety, and tuberculosis, which eventually led to his death at age 40. Kafka had a complicated relationship with his domineering father, which influenced much of his writing.",
+    contribution: "Known for works like 'The Metamorphosis,' 'The Trial,' and 'The Castle,' Kafka created surreal, nightmarish worlds that explored themes of alienation, existential anxiety, and absurdity. Notably, Kafka instructed his friend Max Brod to burn his unpublished manuscripts after his death—a request that Brod famously disobeyed, saving Kafka's legacy for posterity.",
+  },
+  {
+    id: 6,
+    name: "Albert Camus",
+    lifespan: "1913–1960",
+    biography: "A French-Algerian philosopher, author, and journalist, who was awarded the Nobel Prize for Literature in 1957. Born in Algeria to French parents, Camus was raised in poverty by his illiterate mother after his father was killed in World War I. He contracted tuberculosis at age 17, which prevented him from continuing his football career. During World War II, he joined the French Resistance and served as editor of the underground newspaper Combat.",
+    contribution: "As a pioneer of absurdism, Camus explored themes of the human condition, alienation, and rebellion against meaninglessness in works like 'The Stranger,' 'The Myth of Sisyphus,' and 'The Plague.' His philosophical writings rejected both religious faith and existential despair in favor of a moral code based on rebellion, freedom, and passion. Camus died in a car accident at age 46, with an unfinished manuscript—'The First Man'—found in the wreckage.",
   },
 ];
 
