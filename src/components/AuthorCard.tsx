@@ -19,6 +19,7 @@ interface AuthorCardProps {
 
 const AuthorCard: React.FC<AuthorCardProps> = ({ author, index }) => {
   const [expanded, setExpanded] = useState(false);
+  const [imageError, setImageError] = useState(false);
   
   return (
     <div 
@@ -28,8 +29,12 @@ const AuthorCard: React.FC<AuthorCardProps> = ({ author, index }) => {
       {/* Author image or placeholder */}
       <div className="flex-shrink-0">
         <Avatar className="w-28 h-28 md:w-32 md:h-32 border border-border">
-          {author.image ? (
-            <AvatarImage src={author.image} alt={author.name} />
+          {author.image && !imageError ? (
+            <AvatarImage 
+              src={author.image} 
+              alt={author.name} 
+              onError={() => setImageError(true)}
+            />
           ) : (
             <AvatarFallback className="bg-gradient-to-br from-paper to-paper-dark">
               <User className="w-12 h-12 text-ink-lightest" />
