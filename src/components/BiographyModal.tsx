@@ -20,8 +20,8 @@ const BiographyModal = ({ author, isOpen, onClose }: BiographyModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl bg-[#f8f5e6] p-0 overflow-hidden">
-        <div className="p-6">
+      <DialogContent className="max-w-3xl max-h-[85vh] bg-[#f8f5e6]">
+        <div className="overflow-y-auto max-h-[calc(85vh-4rem)] pr-6">
           <DialogHeader>
             <DialogTitle className="text-3xl font-bold mb-2 vintage-text text-[#1a1a2e]">
               {author.name}

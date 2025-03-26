@@ -21,32 +21,37 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-8 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'py-3 bg-[var(--parchment)]/95 shadow-md backdrop-blur-lg border-b border-[var(--rich-brown)]/10' 
-          : 'py-5 bg-transparent'
+          ? 'py-2 bg-[var(--parchment)]/95 shadow-md backdrop-blur-lg border-b border-[var(--rich-brown)]/10' 
+          : 'py-4 bg-transparent'
       }`}
     >
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 flex items-center justify-between relative">
         {/* Logo */}
         <Link 
           to="/" 
-          className="flex items-center gap-2 vintage-text text-lg md:text-xl font-medium text-[var(--rich-brown)] transition-all duration-300 hover:text-[var(--aged-gold)]"
+          className="flex items-center gap-2 vintage-text text-lg font-medium text-[var(--rich-brown)] transition-all duration-300 hover:text-[var(--aged-gold)] relative"
         >
           <Feather className={`transition-all duration-300 ${isScrolled ? 'h-5 w-5' : 'h-6 w-6'} text-[var(--aged-gold)]`} />
           <span className="hidden sm:inline">Echoes of Lost Words</span>
           <span className="sm:hidden">E.L.W</span>
-          
           <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--aged-gold)]/30 to-transparent"></span>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           <NavLink to="/lost-manuscripts" active={location.pathname === '/lost-manuscripts'}>Lost Manuscripts</NavLink>
-          <NavLink to="/forgotten-authors" active={location.pathname === '/forgotten-authors'}>Forgotten Authors</NavLink>
+          <NavLink to="/controversial-authors" active={location.pathname === '/controversial-authors'}>Controversial Authors</NavLink>
           <NavLink to="/share-stories" active={location.pathname === '/share-stories'}>Share Stories</NavLink>
+          <NavLink to="/about" active={location.pathname === '/about'}>About</NavLink>
         </div>
 
         {/* Mobile Menu Button */}
@@ -64,17 +69,22 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[var(--parchment)]/98 border-b border-[var(--rich-brown)]/10 shadow-lg animate-in fade-in slide-in-from-top-5 duration-300">
-          <div className="flex flex-col py-6 px-8 gap-5 max-w-7xl mx-auto">
-            <MobileNavLink to="/lost-manuscripts" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/lost-manuscripts'}>
-              Lost Manuscripts
-            </MobileNavLink>
-            <MobileNavLink to="/forgotten-authors" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/forgotten-authors'}>
-              Forgotten Authors
-            </MobileNavLink>
-            <MobileNavLink to="/share-stories" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/share-stories'}>
-              Share Stories
-            </MobileNavLink>
+        <div className="md:hidden fixed top-[calc(var(--navbar-height,3.5rem)+1px)] left-0 right-0 bg-[var(--parchment)]/98 border-b border-[var(--rich-brown)]/10 shadow-lg animate-in fade-in slide-in-from-top-5 duration-300">
+          <div className="container mx-auto py-4 px-4">
+            <div className="flex flex-col gap-4">
+              <MobileNavLink to="/lost-manuscripts" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/lost-manuscripts'}>
+                Lost Manuscripts
+              </MobileNavLink>
+              <MobileNavLink to="/controversial-authors" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/controversial-authors'}>
+                Controversial Authors
+              </MobileNavLink>
+              <MobileNavLink to="/share-stories" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/share-stories'}>
+                Share Stories
+              </MobileNavLink>
+              <MobileNavLink to="/about" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/about'}>
+                About
+              </MobileNavLink>
+            </div>
           </div>
         </div>
       )}
@@ -111,15 +121,12 @@ const MobileNavLink = ({
 }) => (
   <Link 
     to={to}
-    className={`vintage-text text-[var(--rich-brown)]/80 hover:text-[var(--rich-brown)] text-lg py-2 relative group ${
-      active ? 'text-[var(--rich-brown)] font-medium pl-4 border-l-2 border-[var(--aged-gold)]' : 'pl-0'
+    className={`vintage-text text-[var(--rich-brown)]/80 hover:text-[var(--rich-brown)] text-lg py-3 px-4 relative group rounded-lg transition-all ${
+      active ? 'text-[var(--rich-brown)] font-medium bg-[var(--rich-brown)]/5' : 'hover:bg-[var(--rich-brown)]/5'
     }`}
     onClick={onClick}
   >
     {children}
-    {!active && (
-      <span className="absolute left-0 top-0 bottom-0 w-0 border-l-2 border-[var(--aged-gold)]/0 group-hover:border-[var(--aged-gold)]/50 group-hover:w-1 transition-all duration-300"></span>
-    )}
   </Link>
 );
 

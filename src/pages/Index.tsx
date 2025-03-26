@@ -200,10 +200,10 @@ const Index = () => {
                 </CardContent>
               </Card>
               <Card className="literature-card shadow-lg transform transition-all duration-300 hover:translate-y-[-5px]">
-                <CardContent className="pt-8 px-6 pb-6 text-center cursor-pointer" onClick={() => navigate("/forgotten-authors")}>
+                <CardContent className="pt-8 px-6 pb-6 text-center cursor-pointer" onClick={() => navigate("/controversial-authors")}>
                   <Users className="w-12 h-12 text-[var(--aged-gold)] mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-[var(--deep-navy)] mb-3 vintage-text">Forgotten Authors</h3>
-                  <p className="text-[var(--rich-brown)]/80">Learn about writers whose voices were silenced or never properly heard</p>
+                  <h3 className="text-xl font-semibold text-[var(--deep-navy)] mb-3 vintage-text">Controversial Authors</h3>
+                  <p className="text-[var(--rich-brown)]/80">Learn about writers whose works challenged the status quo of their time</p>
                 </CardContent>
               </Card>
               <Card className="literature-card shadow-lg transform transition-all duration-300 hover:translate-y-[-5px]">
@@ -263,7 +263,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               className="border-[var(--rich-brown)] text-[var(--rich-brown)] hover:bg-[var(--rich-brown)]/10 px-8 text-lg"
-              onClick={() => navigate("/forgotten-authors")}
+              onClick={() => navigate("/controversial-authors")}
             >
               View All Authors
               <ArrowRight className="ml-2 h-5 w-5" />

@@ -6,6 +6,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --parchment: #f8f5e6;
+  --rich-brown: #4A4A4A;
+  --aged-gold: #B8860B;
+  --deep-navy: #1a1a2e;
+  --navbar-height: 3.5rem;
+}
+
 @layer base {
   :root {
     --background: #f8f5e6;
@@ -39,11 +47,7 @@
     --radius: 0.5rem;
     
     /* Enhanced theme colors */
-    --rich-brown: #59442f;
-    --aged-gold: #d4af37;
     --muted-burgundy: #8c1c13;
-    --deep-navy: #1a1a2e;
-    --parchment: #f8f5e6;
     --highlight-blue: #5271ff;
     --highlight-orange: #ff8a00;
 
@@ -88,7 +92,8 @@
   }
 
   body {
-    @apply bg-[var(--parchment)] text-foreground;
+    @apply bg-[var(--parchment)] text-[var(--rich-brown)] antialiased;
+    -webkit-tap-highlight-color: transparent;
     font-feature-settings: "rlig" 1, "calt" 1;
     background-image: var(--parchment-texture);
     background-color: var(--parchment);
@@ -228,7 +233,7 @@
 }
 
 .vintage-text {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   letter-spacing: -0.025em;
 }
 
@@ -254,7 +259,11 @@
 }
 
 .paper-texture {
-  background-color: var(--muted);
+  background-color: var(--parchment);
+  background-image: 
+    linear-gradient(rgba(89, 68, 47, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(89, 68, 47, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
   position: relative;
   border: 1px solid rgba(89, 68, 47, 0.1);
   border-radius: 0.5rem;
@@ -329,4 +338,30 @@
   background-repeat: no-repeat;
   z-index: -1;
   opacity: 0.2;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 3.5rem;
+  }
+
+  .container {
+    @apply px-4;
+  }
+
+  /* Prevent body scroll when mobile menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Ensure modals are properly positioned on mobile */
+  [role="dialog"] {
+    @apply !max-h-[95vh] !max-w-[95vw] !m-auto;
+  }
+
+  /* Improve touch targets on mobile */
+  button, a {
+    @apply min-h-[44px] min-w-[44px];
+  }
 }

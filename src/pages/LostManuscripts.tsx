@@ -180,7 +180,7 @@ const LostManuscripts = () => {
               <h3 className="text-xl font-semibold mb-4 vintage-text">Quick Links</h3>
               <ul className="space-y-2 text-gray-300">
                 <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
-                <li><a href="/forgotten-authors" className="hover:text-white transition-colors">Forgotten Authors</a></li>
+                <li><a href="/controversial-authors" className="hover:text-white transition-colors">Controversial Authors</a></li>
                 <li><a href="/share-stories" className="hover:text-white transition-colors">Share Stories</a></li>
               </ul>
             </div>

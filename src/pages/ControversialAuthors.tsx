@@ -44,7 +44,7 @@ const authors = [
 const periods = ["All Periods", "19th Century", "20th Century", "Contemporary"];
 const locations = ["All Locations", "Russia", "Czech Republic", "France", "Algeria"];
 
-const ForgottenAuthorsPage = () => {
+const ControversialAuthorsPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPeriod, setSelectedPeriod] = useState("All Periods");
   const [selectedLocation, setSelectedLocation] = useState("All Locations");
@@ -60,7 +60,7 @@ const ForgottenAuthorsPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center text-foreground">Forgotten Authors</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center text-foreground">Controversial Authors</h1>
       
       <div className="max-w-4xl mx-auto mb-8">
         <div className="flex gap-4 mb-6">
@@ -138,4 +138,4 @@ const ForgottenAuthorsPage = () => {
   );
 };
 
-export default ForgottenAuthorsPage; 
+export default ControversialAuthorsPage; 
