@@ -26,18 +26,6 @@ const Navbar = () => {
     setIsMenuOpen(false);
   }, [location]);
 
-  // Prevent body scroll when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isMenuOpen]);
-
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -79,44 +67,11 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden transition-opacity duration-300 ${
-          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-      />
-
       {/* Mobile Menu */}
-      <div 
-        className={`md:hidden fixed top-0 right-0 bottom-0 w-[280px] bg-[var(--parchment)] shadow-xl transform transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col h-full">
-          {/* Mobile Menu Header */}
-          <div className="p-4 border-b border-[var(--rich-brown)]/10">
-            <div className="flex items-center justify-between">
-              <Link 
-                to="/" 
-                className="flex items-center gap-2 vintage-text"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Feather className="h-5 w-5 text-[var(--aged-gold)]" />
-                <span>E.L.W</span>
-              </Link>
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="p-2 rounded-full hover:bg-[var(--rich-brown)]/10"
-              >
-                <X className="h-5 w-5 text-[var(--rich-brown)]" />
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Menu Links */}
-          <div className="flex-1 overflow-y-auto py-4 px-2">
-            <div className="flex flex-col gap-2">
+      {isMenuOpen && (
+        <div className="md:hidden fixed top-[calc(var(--navbar-height,3.5rem)+1px)] left-0 right-0 bg-[var(--parchment)]/80 backdrop-blur-md border-b border-[var(--rich-brown)]/10 shadow-lg animate-in fade-in slide-in-from-top-5 duration-300">
+          <div className="container mx-auto py-4 px-4">
+            <div className="flex flex-col gap-4">
               <MobileNavLink to="/lost-manuscripts" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/lost-manuscripts'}>
                 Lost Manuscripts
               </MobileNavLink>
@@ -132,7 +87,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
