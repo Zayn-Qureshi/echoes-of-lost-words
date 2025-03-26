@@ -1,69 +1,76 @@
-# Welcome to your Lovable project
+# Echoes of Lost Words
 
-## Project info
+A digital archive dedicated to preserving the memory of lost literary works and forgotten authors throughout history. This project aims to document and share information about books that have been lost, censored, or forgotten, and the authors whose voices were silenced through time.
 
-**URL**: https://lovable.dev/projects/74d52a0e-5ddd-49ef-bd09-555a62e01945
+## Features
 
-## How can I edit this code?
+- **Lost Manuscripts Archive**: Browse through a curated collection of lost literary works from different historical periods
+- **Forgotten Authors**: Discover the stories of writers whose works were lost, censored, or never properly heard
+- **Interactive Interface**: Modern, responsive design with a vintage aesthetic
+- **Search & Filter**: Easy-to-use search functionality to find specific works or authors
+- **Detailed Information**: Comprehensive details about each work and author, including historical context and significance
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Radix UI
+- Lucide Icons
+- React Router
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/74d52a0e-5ddd-49ef-bd09-555a62e01945) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/echoes-of-lost-words.git
+```
 
-Follow these steps:
+2. Navigate to the project directory:
+```bash
+cd echoes-of-lost-words
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. Install dependencies:
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+5. Open your browser and visit `http://localhost:3000`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── assets/        # Images and static assets
+├── components/    # Reusable UI components
+├── pages/         # Page components
+├── lib/          # Utility functions and helpers
+└── styles/       # Global styles and CSS modules
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contributing
 
-## What technologies are used for this project?
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This project is built with .
+## License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## How can I deploy this project?
+## Acknowledgments
 
-Simply open [Lovable](https://lovable.dev/projects/74d52a0e-5ddd-49ef-bd09-555a62e01945) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- All historical information is sourced from public domain materials and academic research
+- Author images and biographical information are used for educational purposes
